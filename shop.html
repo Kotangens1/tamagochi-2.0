@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shop.css">  <!--Подключаю файл css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Подключаю шрифт Roboto-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Подключаю шрифт Roboto-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> <!--Подключаю шрифт Roboto-->
+  </head>
+  <body>
+
+
+    <div class="shop">
+
+      <div class="money">
+        <div class="txt_money">100$</div>
+        <button type="button" class="button_money" onclick="get_money">+</button>
+      </div>
+      <div class="nav">
+        <button class="link_home" onclick="window.location.href='file://katrin2/104/test-web game new design/index.html';" type="button"><svg width="32px" height="32px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: none;
+              }
+            </style>
+          </defs>
+          <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+          <path d="M16.6123,2.2138a1.01,1.01,0,0,0-1.2427,0L1,13.4194l1.2427,1.5717L4,13.6209V26a2.0041,2.0041,0,0,0,2,2H26a2.0037,2.0037,0,0,0,2-2V13.63L29.7573,15,31,13.4282ZM18,26H14V18h4Zm2,0V18a2.0023,2.0023,0,0,0-2-2H14a2.002,2.002,0,0,0-2,2v8H6V12.0615l10-7.79,10,7.8005V26Z" transform="translate(0 0)"/>
+        </svg></button>
+        <button class="link_shop" onclick="window.location.href='file://katrin2/104/test-web game new design/index.html';" type="button"><svg version="1.1" id="_x31_" class="link_shop_img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+          <g id="_x31__57_">
+            <path id="_x34__33_" d="M104.6,44.3c-0.5-0.7-1.3-1.1-2.1-1.1L36,42.7l-3.6-15.5c-0.3-1.2-1.4-2-2.7-2.1l-16.3-0.1
+              c-1.6,0-2.8,1.1-2.7,2.7c0,1.6,1.1,2.8,2.7,2.7l14.2,0.1L45.8,106c0.3,1.2,1.4,2,2.7,2.1l39.4,0.4c0.3-0.1,0.4,0,0.7,0
+              c1.2-0.3,2-1.4,2-2.6c0-1.6-1.1-2.8-2.7-2.7l-37.3-0.3l-2.8-11.2l45.1-4.7c1.1-0.1,2-0.9,2.3-2l9.9-38
+              C105.2,45.9,105,44.9,104.6,44.3z M37.3,48.2l15.5,0.2l-0.2,16.1l-11.6-0.1L37.3,48.2z M52.5,85.4l-6.1,0.7l-4-16.4l10.1,0.1
+              L52.5,85.4z M74.4,83L58,84.8l0.1-14.9L74.6,70L74.4,83z M58.2,64.4l0.2-16.1l16.2,0.2l-0.1,16L58.2,64.4z M90.4,81.4l-10.6,0.8
+              L79.9,70l13.3,0L90.4,81.4z M94.7,64.7l-14.6-0.1l0.2-16.1L99,48.7L94.7,64.7z"/>
+
+              <ellipse id="_x33__33_" transform="matrix(8.970169e-03 -1 1 8.970169e-03 -68.4538 163.4287)" cx="48.2" cy="116.2" rx="5.4" ry="5.4"/>
+
+              <ellipse id="_x33__32_" transform="matrix(8.970169e-03 -1 1 8.970169e-03 -29.7338 203.2406)" cx="87.7" cy="116.6" rx="5.4" ry="5.4"/>
+          </g>
+        </svg> <img class="mobile_link_shop_img" src="icon/mobile_home.svg"></button>
+      </div>
+
+      <div class="container">
+        <div class="shop_txt">MeowShop
+          <div class="shop_line"></div>
+        </div>
+        <div class="indicators_wrapper">
+          <div class="hungry">
+            <div class="hungry_fill_wrapper">
+              <div class="hungry_fill">
+              </div>
+            </div>
+            <img class="indicators_icon" src="icon/hungry.svg">
+          </div>
+
+          <div class="hungry">
+            <div class="hungry_fill_wrapper">
+              <div class="hungry_fill">
+              </div>
+            </div>
+            <img class="indicators_icon" src="icon/hungry.svg">
+          </div>
+
+          <div class="hungry">
+            <div class="hungry_fill_wrapper">
+              <div class="hungry_fill">
+              </div>
+            </div>
+            <img class="indicators_icon" src="icon/hungry.svg">
+          </div>
+
+          <div class="hungry">
+            <div class="hungry_fill_wrapper">
+              <div class="hungry_fill">
+              </div>
+            </div>
+            <img class="indicators_icon" src="icon/hungry.svg">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="i_have">
+        <div class="i_have_txt">Ваш холодильник</div>
+        <div class="i_have_wrapper">
+
+
+
+        </div>
+      </div>
+
+      <div class="mobile_shop_scroll">
+        <div class="shop_wrapper">
+          <div class="item_wrapper_line">
+            <div class="item_wrapper">
+              <div class="shop_txt_item_wrapper">
+                <div class="shop_txt_item">30$</div>
+                <div class="shop_txt_item">+5</div>
+              </div>
+              <div class="shop_img">
+                <img src="svg/cake.svg">
+              </div>
+              <button onclick="buy(0)" type="button" class="shop_buy">Купить</button>
+            </div>
+
+            <div class="item_wrapper">
+              <div class="shop_txt_item_wrapper">
+                <div class="shop_txt_item">20$</div>
+                <div class="shop_txt_item">+5</div>
+              </div>
+              <div class="shop_img">
+                <img src="svg/sandwich.svg">
+              </div>
+              <button onclick="buy(1)" type="button" class="shop_buy">Купить</button>
+            </div>
+
+            <div class="item_wrapper">
+              <div class="shop_txt_item_wrapper">
+                <div class="shop_txt_item">30$</div>
+                <div class="shop_txt_item">+5</div>
+              </div>
+              <div class="shop_img">
+                <img src="svg/pizza.svg">
+              </div>
+              <button onclick="buy(2)" type="button" class="shop_buy">Купить</button>
+            </div>
+
+            <div class="item_wrapper">
+              <div class="shop_txt_item_wrapper">
+                <div class="shop_txt_item">10$</div>
+                <div class="shop_txt_item">+20</div>
+              </div>
+              <div class="shop_img">
+                <img src="svg/porridge.svg">
+              </div>
+              <button onclick="buy(3)" type="button" class="shop_buy">Купить</button>
+            </div>
+
+
+
+          </div>
+          <div class="item_wrapper_line">
+          <div class="item_wrapper">
+          </div>
+
+          <div class="item_wrapper">
+          </div>
+
+          <div class="item_wrapper">
+          </div>
+
+          <div class="item_wrapper">
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+
+    <script src="shop.js">
+    </script>
+  </body>
+</html>

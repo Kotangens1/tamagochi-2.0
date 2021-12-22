@@ -1,0 +1,541 @@
+
+
+
+/* @media only screen and (min-width: 150px) and (max-width: 600px) {
+
+  html, body {
+    background-color: #A2AED1;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: white;
+    margin: 0;
+    overflow-y: hidden;
+  }
+
+
+  .link_home {
+    display: none;
+  }
+  .Rectangle {
+    position: fixed;
+    top:0px;
+
+    width: 100%;
+    height: 10px;
+    background-color: red;
+  }
+
+  .indicators_wrapper {
+    position:absolute;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .hungry {
+    position: relative;
+    width: 74px;
+    height: 74px;
+    border-radius: 100px;
+    background:#5258DE;
+  }
+  .hungry_fill {
+    position: relative;
+    clip-path: circle(37px at 37px 37px);
+    width: 74px;
+    transition: height 1s;
+    background: #6F84C1 ;
+  }
+  .indicators_icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+  }
+
+  .room {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+      
+  } 
+
+
+  .place_cat {
+    position: relative;
+    top:20%;
+    width: 294px;
+    height: 420px;
+    z-index: 3;
+
+    margin: 0 auto;
+     
+
+  }
+  .cat {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+
+  }
+  .body_cat {
+    position: relative;
+    left: 18px;
+    margin: 0 auto;
+    margin: 0 auto;
+  }
+  .tail {
+    position: absolute;
+    top: 60px;
+    left: -100px;
+
+  }
+  .armchair {
+    position: absolute;
+
+  }
+  .window {
+    position: absolute;
+
+  }
+  .fridge{
+
+  }
+  .fridge button {
+    opacity: 0;
+  }
+
+  .fridge_open {
+    position: fixed;
+    margin: 0 auto;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    height: 17%;
+    bottom: 0%;
+    background: #7B8FCB;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+  }
+  .fridge_open_wrapper {
+    position: relative;
+    width: 70%;
+    height: 80%;
+    left: 3%;
+    display: flex;
+    background: #B6C5F4;
+    border-radius: 34px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .fridge_item_wrapper {
+
+    position: relative;
+    width: 30%;
+    height: 76%;
+    margin: 2px;
+    left: 2%;
+    border-radius: 26px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .fridge_img{
+    width: 70px;
+    height: 70px;
+  }
+  #fridge_txt {
+
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 22px;
+    color: #303249;
+  }
+  .link_shop {
+    position: absolute;
+    bottom: 3%;
+    right: 1%;
+    z-index: 5;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+  .link_shop_img {
+    display: none;
+  }
+  .mobile_link_shop_img {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    z-index: 5;
+    width:85px;
+    height:85px;
+  }
+
+  .window {
+    position: absolute;
+    top: 15%;
+    right: -38%;
+    z-index: 0;
+  }
+  .armchair {
+    position: absolute;
+    height: 29%;
+    left: -40%;
+    top: 39%;
+    z-index: 0;
+  }
+  .carpet {
+     position: absolute;
+     width: 90%;
+     top:69%;
+     z-index: 0;
+     right: 0;
+     left: 0;
+     margin: 0 auto;
+   }
+
+}
+*/
+
+/* @media only screen and (min-width: 761px) and (max-width: 2600px)  { */
+  html, body {
+      background-color: #A2AED1;
+      height: 100%;
+      width: 100%;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      color: #FFFFFF;
+      user-select: none;
+  }
+
+
+
+
+  .nav {
+      position: absolute;
+      top: 16px;
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+  }
+  .nav button {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: #A2AED1;
+      border: 1px solid #303249;
+      box-sizing: border-box;
+      border-radius: 26px;
+  }
+  svg {
+      position: relative;
+      right: 20px;
+      left: 0;
+      margin: 0 auto;
+      width: 32px;
+      height: 32px;
+      fill: #303249;
+  }
+
+
+
+
+  .indicators_wrapper {
+      position: absolute;
+      z-index: 4;
+      top: 10%;
+      right: 10%;
+      width: 320px;
+      height: 55px;
+      justify-content: space-around;
+      display: flex;
+      flex-flow: row;
+      
+  }
+  #indicators_value {
+    position: absolute;
+    width: 50px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #7089D2;
+  }
+
+  .hungry {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+      background:#5258DE;
+      transition: background 5s;
+
+  }
+  .hungry_fill {
+      position: relative;
+      display: block;
+
+      clip-path: circle(25px at 25px 25px);
+      width: 50px;
+
+      transition: height 1s;
+
+      background: #6F84C1 ;
+  }
+
+  .health {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background:#5258DE;
+    transition: background 5s;
+
+  }
+  .health_fill {
+      position: relative;
+      display: block;
+
+      clip-path: circle(25px at 25px 25px);
+      width: 50px;
+
+      transition: height 1s;
+
+      background: #6F84C1 ;
+  }
+
+  .care {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background:#5258DE;
+    transition: background 5s;
+
+}
+  .care_fill {
+      position: relative;
+      display: block;
+
+      clip-path: circle(25px at 25px 25px);
+      width: 50px;
+
+      transition: height 1s;
+
+      background: #6F84C1 ;
+  }
+
+  .age {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background:#5258DE;
+
+}
+  .age_fill {
+      position: relative;
+      display: block;
+
+      clip-path: circle(25px at 25px 25px);
+      width: 50px;
+
+      transition: height 1s;
+
+      background: #6F84C1 ;
+  }
+  .age_icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #353962;
+  }
+
+  .indicators_icon {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+  }
+
+  .room {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto auto;
+      width: 75%;
+      height: 621px;
+      /*background-color: white;*/
+  }
+
+  .place_cat {
+      position: absolute;
+      z-index: 3;
+      width: 478px;
+      height: 474.27px;
+      right: 0;
+      left: 0;
+      top: 102px;
+      margin: 0 auto;
+      /*background-color: white;*/
+      border-radius: 12px;
+  }
+  .cat {
+      position: absolute;
+      width: 299.74px;
+      height: 207.27px;
+      left: 122.37px;
+      bottom: 12px;
+  }
+  .body_cat {
+      position: absolute;
+      top: -170px;
+      left: -50px;
+  }
+  .tail {
+      position: absolute;
+      top: -130px;
+      left: -200px;
+  }
+  .armchair {
+      position: absolute;
+      top: 273px;
+      left: 10px;
+      width: 367px;
+      height: 251px;
+  }
+  .window {
+      position: absolute;
+      top: 81px;
+      left: 40%;
+      width: 314px;
+      height: 215px;
+  }
+  .fridge{
+
+  }
+  .fridge button {
+      position: absolute;
+      top: 113px;
+      right: 10px;
+      width: 223px;
+      height: 422px;
+      border-radius: 26px;
+      border: 0;
+      background-image: url("object/fridge.svg");
+  }
+  .fridge button:hover {
+      border: 2px solid #000000;
+      box-sizing: border-box;
+      border-radius: 26px;
+  }
+  .fridge button:active {
+        border: 0;
+  }
+  .fridge_open {
+      position: absolute;
+      z-index: 3;
+      top: 113px;
+      right: 10px;
+      width: 223px;
+      height: 422px;
+      background: #5E6E9E;
+      border-radius: 26px;
+  }
+  .fridge_open_wrapper {
+      display: flex;
+
+      width: 212px;
+      height: 402px;
+      background: #6F84C1;
+      border-radius: 26px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+
+  }
+  .fridge_item_wrapper {
+
+      width: 212px;
+      height: 114px;
+      background: #8499DA;
+      border-radius: 26px;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .fridge_img{
+      width: 95px;
+      height: 95px;
+  }
+  #fridge_txt {
+
+      width: 76px;
+      height: 92px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 22px;
+      color: #FFFFFF
+  }
+
+  .carpet {
+       position: absolute;
+       bottom: 30px;
+       right: 0;
+       left: 0;
+       margin: 0 auto;
+       width: 599px;
+       height: 41px;
+  }
+  /*СКРЫТЫЕ ЭЛЕМЕНТЫ*/
+  .mobile_link_shop_img  {
+    display: none;
+  }
+
+
+/*}*/
