@@ -1,0 +1,298 @@
+
+  html, body {
+    background-color: #A2AED1;
+    height: 100%;
+    width: 100%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    user-select: none;
+}
+
+.authorization {
+    
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #232d4b;
+    color: #303249;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .authorization_wrapper {
+    display: none;
+    position: absolute;
+    width: 430px;
+    height: 580px;
+    border-radius: 34px;
+    background-color: #8499DA;
+    display: none;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .auth_txt {
+    z-index: 3;
+    position: relative;
+    top: 0;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 112px;
+    color: #ffffff;
+    
+  }
+  .login_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .login {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #FFFFFF;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #3D4497;
+    border: none;
+  }
+  .login:focus {
+    outline: none;
+    border: none;
+  }
+
+  .paswd_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .paswd {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #FFFFFF;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #3D4497;
+    border: none;
+  }
+  .paswd:focus {
+    outline: none;
+    border: none;
+  }
+
+  .enter_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .enter {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #28305c;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 70;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  .enter:active {
+      background-color: #3D4497;
+  }
+  .enter:hover {
+    box-shadow: 0px 0px 29px #FF3E83;
+  }
+
+  .reg_btn {
+    background-color: #8499DA;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 100px;
+    outline: none;
+    border: none;
+    color: white;
+  }
+  .reg_btn:hover {
+    text-shadow: 0px 0px 4px #FF50AF;
+  }
+
+
+
+
+
+
+
+  /* //////////////////////////////////////////////////  Регистрация:*/
+
+  .registration_wrapper {
+    display: none;
+    position: absolute;
+    width: 430px;
+    height: 580px;
+    border-radius: 34px;
+    background-color: #8499DA;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .reg_txt {
+    z-index: 3;
+    position: relative;
+    top: 0;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 112px;
+    color: #ffffff;
+    
+  }
+  .login_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .login {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #FFFFFF;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #3D4497;
+    border: none;
+  }
+  .login:focus {
+    outline: none;
+    border: none;
+  }
+
+  .paswd_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .paswd {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #FFFFFF;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #3D4497;
+    border: none;
+  }
+  .paswd:focus {
+    outline: none;
+    border: none;
+  }
+
+  .reg_wrapper {
+    width: 368px;
+    height: 58px;
+    background: #FFFFFF;
+    border-radius: 13px;
+  }
+  .create_acc {
+    position: absolute;
+    width: 368px;
+    height: 58px;
+
+    background: #28305c;
+    border-radius: 13px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 70;
+    font-size: 32px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  .create_acc:active {
+      background-color: #3D4497;
+  }
+  .create_acc:hover {
+    box-shadow: 0px 0px 29px #FF3E83;
+  }
+
+  .reg_btn2 {
+    background-color: #8499DA;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 100px;
+    outline: none;
+    border: none;
+    color: white;
+  }
+  .reg_btn2:hover {
+    text-shadow: 0px 0px 4px #FF50AF;
+  }
