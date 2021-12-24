@@ -1,17 +1,8 @@
 console.log("Файл с JS подключён!");
 
-const shop_money = document.querySelector(".shop_money");
-const i_have_wrapper = document.querySelector(".i_have_wrapper");
+const API_URL = 'http://localhost:5000';
 
-var a = 0;
-var money = 100;
-var volume = 4;
-var audio_shop_pay = new Audio();
-audio_shop_pay.src = "mp3/shop_pay.mp3"
-
-
-let array_shop;
-array_shop_begin = [
+const array_shop_begin = [
   {
     name: "cake",
     price: 30,
@@ -38,6 +29,53 @@ array_shop_begin = [
   }
 ];
 
+let array_shop = array_shop_begin;
+
+const getHeaders = () => ({
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+});
+
+const setLocation = (page) => {
+  const separatedByRoute = window.location.href.split('/');
+  window.location.href = separatedByRoute[separatedByRoute.length - 1] = page;
+}
+
+const fetchUserProducts = async () => {
+  const response = await fetch(`${API_URL}/products`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: getHeaders(),
+  });
+
+  return await response.json();
+};
+
+const shop_money = document.querySelector(".shop_money");
+const i_have_wrapper = document.querySelector(".i_have_wrapper");
+
+const goToHomeButton = document.querySelector(".link_home");
+
+goToHomeButton.addEventListener('click', () => {
+  setLocation('index.html');
+});
+
+const postUserProducts = async (products) => {
+  const response = await fetch(`${API_URL}/products`, {
+    method: 'POST',
+    cache: 'no-cache',
+    body: JSON.stringify(products),
+    headers: getHeaders(),
+  });
+  return await response.json();
+};
+
+var a = 0;
+var money = 100;
+var volume = 4;
+var audio_shop_pay = new Audio();
+audio_shop_pay.src = "mp3/shop_pay.mp3"
+
 
 
 
@@ -45,6 +83,10 @@ array_shop_begin = [
 ///////////////////Функции
 
 function updating_variables(index) {
+  const volume0 = document.querySelector("#volume0");
+  const volume1 = document.querySelector("#volume1");
+  const volume2 = document.querySelector("#volume2");
+  const volume3 = document.querySelector("#volume3");
   //shop_money.innerHTML =`Money: ${money}`;
   if (index == 0) {
     volume0.innerHTML = `${array_shop[index].volume} шт`;
@@ -79,7 +121,7 @@ const add_item = index => {
   `
 }
 
-const fillHtmlList = () => {   //Функция без аргументов
+const fillHtmlList = (array_shop) => {   //Функция без аргументов
   //i_have_wrapper.innerHTML = "";  //Обратимся к свойству объекта div(поле для готовых задач) и присвоим ему пустоту. Это свойство берёт весь блок
   //Если у объекта tasks свойство length больше нуля выполняется команда
     array_shop.forEach((el,index) => {
@@ -98,6 +140,22 @@ const fillHtmlList = () => {   //Функция без аргументов
 
 }
 
+const initialSteps = () => {
+  fetchUserProducts().then(({ message, products }) => {
+    if (message === 'Пользователь не авторизован') {
+      return setLocation('authorization.html');
+    }
+    if (!!products.length) {
+      array_shop = products
+      fillHtmlList(array_shop);
+    } else {
+      return array_shop = array_shop_begin;
+    }
+  }).catch((error) => console.log('error', error));
+};
+
+initialSteps();
+
 const buy = index => {  ///Функция покупки. Вызов в кнопке shop_buy с разными индексами
 //  if (money >= array_shop[index].price) {
 //    money = money - array_shop[index].price;
@@ -106,16 +164,26 @@ const buy = index => {  ///Функция покупки. Вызов в кноп
   audio_shop_pay.play();
   if (array_shop[index].volume == 0) {
     i_have_wrapper.innerHTML += add_item(index); //Добавление блока кода, в холодильнике
-    const volume0 = document.querySelector("#volume0");
-    const volume1 = document.querySelector("#volume1");
-    const volume2 = document.querySelector("#volume2");
-    const volume3 = document.querySelector("#volume3");
+    // const volume0 = document.querySelector("#volume0");
+    // const volume1 = document.querySelector("#volume1");
+    // const volume2 = document.querySelector("#volume2");
+    // const volume3 = document.querySelector("#volume3");
   };
 
+  // if (array_shop) {
+  console.log('array_shop started', array_shop);
+
   array_shop[index].volume = array_shop[index].volume + 1;
-  localStorage.setItem('array_shop',JSON.stringify(array_shop));
+  // }
+  console.log('array_shop ended', index, array_shop[index].volume, array_shop);
+  postUserProducts(array_shop).then(({ message }) => {
+    if (message === 'Пользователь не авторизован') {
+      return setLocation('authorization.html');
+    }
+  });
+  // localStorage.setItem('array_shop',JSON.stringify(array_shop));
 //  localStorage.setItem('money',JSON.stringify(money));
-  console.log(array_shop[index].name);
+//   console.log(array_shop[index].name);
 
   updating_variables(index);
 
@@ -124,13 +192,15 @@ const buy = index => {  ///Функция покупки. Вызов в кноп
 
 
 /////////////////////////код
-if (localStorage.array_shop) {
-  console.log("В Локальном хранилище есть массива");
-  a = 1;
-};
-!localStorage.array_shop ? array_shop = array_shop_begin: array_shop = JSON.parse(localStorage.getItem('array_shop'));
-console.log(array_shop);
-console.log(array_shop[2].name);
-if (a==1) {
-  fillHtmlList();
-}
+// if (localStorage.array_shop) {
+//   console.log("В Локальном хранилище есть массива");
+//   a = 1;
+// };
+// !localStorage.array_shop ? array_shop = array_shop_begin: array_shop = JSON.parse(localStorage.getItem('array_shop'));
+// console.log(array_shop);
+// console.log(array_shop[2].name);
+// if (a==1) {
+  fillHtmlList(array_shop);
+// }
+// setInterval(fillHtmlList,5000);
+

@@ -11,44 +11,21 @@
 </head>
 <body>
     <div class="authorization">
-      
-        <div class="authorization_wrapper">   
-          <div class="auth_txt">Авторизация</div>     
-          <div class="login_wrapper">
-            <input type="text" class="login">
-          </div>
-          <div class="paswd_wrapper"> 
-            <input type="text" class="paswd">
-          </div>
-          <div class="enter_wrapper">
-            <button class="enter">Войти</button>
-          </div>
-          <button class="reg_btn">Зарегистрироваться</button>
-        </div>
-        
-
-        <div class="registration_wrapper">   
-            <div class="reg_txt">Регистрация</div>     
+        <div class="registration_wrapper">
+            <div class="reg_txt">Авторизация</div>
             <div class="login_wrapper">
-              <input type="text" class="login">
+              <input type="text" class="username-input" id="reg-username">
             </div>
             <div class="paswd_wrapper"> 
-              <input type="text" class="paswd">
+              <input type="text" class="password-input" id="reg-password">
             </div>
+            <p class="error-message"></p>
             <div class="reg_wrapper">
-              <button class="create_acc">Зарегистрироваться</button>
+              <button class="submit">Войти</button>
             </div>
-            <button class="reg_btn2">У вас уже есть аккаунт ?!</button>
+            <button class="toggle-auth">Еще нет аккаунта??</button>
           </div>
-
       </div>
-
-
-   
-      
-
-        
-      
 
       <script src="authorization.js"></script>
 </body>

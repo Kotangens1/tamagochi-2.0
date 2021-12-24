@@ -2,6 +2,36 @@ console.log("Файл JS холодильник подключен");
 
 //Название функций drag&drop вида "dragend", (не ondragend)
 
+const API_URL = 'http://localhost:5000';
+
+let array_shop = [];
+
+const getHeaders = () => ({
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+});
+
+const fetchUserProducts = async () => {
+  const response = await fetch(`${API_URL}/products`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: getHeaders(),
+  });
+
+  return await response.json();
+};
+
+const postUserProducts = async (products) => {
+  const response = await fetch(`${API_URL}/products`, {
+    method: 'POST',
+    cache: 'no-cache',
+    body: JSON.stringify(products),
+    headers: getHeaders(),
+  });
+
+  return await response.json();
+};
+
 const fridge_open_wrapper = document.querySelector(".fridge_open_wrapper");
 const body_cat = document.querySelector(".body_cat");
 
@@ -12,7 +42,6 @@ var audio_eating = new Audio();
 audio_meow_feed.src = 'mp3/adult_meow_hungry.mp3';
 
 let drag_ob = [];
-let array_shop;
 var a = 0;
 var b = 0;
 let fridge_txt_array = [];
@@ -31,8 +60,9 @@ const add_item = index => {
   `
 }
 
-const fillHtmlList = () => {
-  array_shop.forEach((el,index) => {
+const fillHtmlList = (array_shop, re) => {
+  console.log('array_shop', array_shop, re)
+  array_shop?.forEach((el,index) => {
       if (array_shop[index].volume > 0) {
         fridge_open_wrapper.innerHTML += add_item(index);
 
@@ -46,6 +76,19 @@ const fillHtmlList = () => {
 
     });
 }
+
+const initialSteps = () => {
+  fetchUserProducts().then(({ message, products }) => {
+    if (message === 'Пользователь не авторизован') {
+      return setLocation('authorization.html');
+    }
+    // console.log('products', products);
+    array_shop = products;
+    fillHtmlList(products);
+  }).catch((error) => console.log('error', error));
+};
+
+initialSteps();
 
 
 function dragstart(index) {  //Начало перетаскивания один раз
@@ -87,7 +130,12 @@ function drop(event) {
     
     console.log(hungry);
     array_shop[product_index].volume = array_shop[product_index].volume - 1; //кол-во продукта уменьшается
-    localStorage.setItem('array_shop',JSON.stringify(array_shop)); //Обновляю массив в JSON
+    // localStorage.setItem('array_shop',JSON.stringify(array_shop)); //Обновляю массив в JSON
+    postUserProducts(array_shop).then(({ message }) => {
+      if (message === 'Пользователь не авторизован') {
+        return setLocation('authorization.html');
+      }
+    });
     text_change(product_index); //Обновляю статус индикаторов
     audio_meow_feed.paused;
     audio_eating.src = `mp3/eating_${array_shop[product_index].name}.mp3`;
@@ -103,11 +151,12 @@ function drop(event) {
 
 
 
-if (localStorage.array_shop) {
-  console.log("В Локальном хранилище есть массива");
-  a = 1;
-};
-!localStorage.array_shop ? array_shop = []: array_shop = JSON.parse(localStorage.getItem('array_shop'));
-if (a==1) {
-  fillHtmlList();
-}
+// if (localStorage.array_shop) {
+//   console.log("В Локальном хранилище есть массива");
+//   a = 1;
+// };
+// !localStorage.array_shop ? array_shop = []: array_shop = JSON.parse(localStorage.getItem('array_shop'));
+// if (a==1) {
+//   fillHtmlList();
+// }
+fillHtmlList(array_shop);
